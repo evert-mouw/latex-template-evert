@@ -1,0 +1,9 @@
+als de referentie te dicht op een citaat volgt, vervang dan
+
+" \cite
+
+door
+
+" \ \cite
+
+em, 28okt08

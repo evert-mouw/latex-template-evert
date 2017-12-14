@@ -1,0 +1,28 @@
+%% fixes links to tables or figures which point to the caption beneath the table or figure
+%% must be loaded after the hyperref package
+%% DO NOT USE when using the "caption" package, because that package already
+%% has it's own solution build-in and the hypcap package breaks that
+%% THE CAPTION PACKAGE IS PREFERRED!!
+%\usepackage[all]{hypcap}
+
+%% Different font in captions under tables and figures (METHOD 1, PREFERRED)
+%% also, has the functionality of "hypcap" (fixes links to tables or figures
+%% which point to the caption beneath the table or figure) build-in, DO NOT LOAD hypcap
+%% CAPTION MUST BE LOADED BEFORE SUBFIG (subfig includes caption but sets no options)
+\usepackage[font=small,format=plain,width=.8\textwidth,labelfont=bf,up,textfont=it,up,hypcap=true]{caption}
+
+%% Different font in captions under tables and figures
+%% Change the first line to choose another font change.
+%% http://dcwww.camd.dtu.dk/~schiotz/comp/LatexTips/LatexTips.html#captfont
+%\newcommand{\captionfonts}{\small}
+%\makeatletter  % Allow the use of @ in command names
+%\long\def\@makecaption#1#2{%
+%  \vskip\abovecaptionskip
+%  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+%  \ifdim \wd\@tempboxa >\hsize
+%    {\captionfonts #1: #2\par}
+%  \else
+%    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+%  \fi
+%  \vskip\belowcaptionskip}
+%\makeatother   % Cancel the effect of \makeatletter{}

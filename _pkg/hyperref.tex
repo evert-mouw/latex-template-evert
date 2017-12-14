@@ -1,0 +1,54 @@
+%% If you are using the hyperref (below), you don't need to load url
+%% because it already provides the \url{...} command.
+% \usepackage{url}
+
+%% HYPERREF for better URLs, internal references, PDF properties, ...
+%% Make sure it comes last of your loaded packages, to give it a fighting chance
+%% of not being over-written, since its job is to redefine many LATEX commands.
+%% Some interesting options:
+%% [bookmarks] a set of PDF bookmarks will be created
+%% [bookmarksopen] expand all the PDF bookmark subtrees
+%% [hyperindex] attempts to make items in the index by hyperlinked back to the text
+%% [unicode] you can use unicode characters in bookmarks
+%% [breaklinks] allow links to break over lines
+%% [hidelinks] gives you active links in black without a box around them
+%% backreferences: DO CURRENTLY NOT WORK, DUNNO WHY NOT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+%% [backref] inserts extra back links into the bibliography for each entry,
+%%  optional values are: section, slide, page, none, or false. If no value is given, section is taken as default.
+%%
+%% Backend driver if not specified: pdftex / xetex (autodetection),
+%% or specify a driver using a package option...
+\usepackage[bookmarks,bookmarksopen,breaklinks,hyperindex,unicode,backref=page]{hyperref}
+
+%% PDF properties using package hyperref
+%% Note: hyperref pdfusetitle option does not allow for non-ascii chars
+\hypersetup{pdftitle={\metatitle}}
+\hypersetup{pdfauthor={\metaauthor}} % don't use comma's (,)
+\hypersetup{pdfsubject={\metasubject}}
+\hypersetup{pdfkeywords={\metakeywords}} % normally seperated by comma's (,)
+\hypersetup{pdfstartview={FitH}}
+\hypersetup{pdfpagelayout={OneColumn}}
+
+%% colored links inside the document
+%% http://en.wikibooks.org/wiki/LaTeX/Packages/Hyperref
+%% you can use, for example: black, red, green, cyan, magenta, blue
+\hypersetup{colorlinks=true} % color frames (false) or colors the text of the links (true)
+\hypersetup{linkcolor=blue} % color of internal links (sections, pages, etc.)
+\hypersetup{citecolor=blue} % color of citation links (bibliography)
+\hypersetup{filecolor=magenta} % color of file links
+\hypersetup{urlcolor=magenta} % color of URL links (mail, web)
+
+%% backreferences formatting
+%\usepackage[backref]{backref}
+%% alternate colors: http://en.wikibooks.org/wiki/LaTeX/Colors
+%% leadsto: Not predefined in LATEX2e. Use one of the packages latexsym, amsfonts, amssymb, or wasysym. See _pkg/font.tex
+\renewcommand*{\backref}[1]{}% for backref < 1.33 necessary
+\renewcommand*{\backrefalt}[4]{%
+\ifcase #1 %
+\textcolor{CornflowerBlue}{$\leadsto$ No citations.}%
+\or
+\textcolor{CornflowerBlue}{$\leadsto$ Cited on page #2.}%
+\else
+\textcolor{CornflowerBlue}{$\leadsto$ Cited #1 times on pages #2.}%
+\fi
+}

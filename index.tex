@@ -1,0 +1,54 @@
+% Evert's latex template
+
+\documentclass[a4paper,12pt]{article}
+%\documentclass[a4paper,12pt,article]{memoir}
+
+%% input vs include
+%% input: just include everything from some external file (without intelligent processing)
+%% include: renders the included file separately, gives clearpage before and after, can give speed bonus,
+%% only works on one level (no nested includes are possible). includes are a good choice for book chapters.
+%% When using SyncTex, you probably need to add the file extention when using input
+%% (so using include is recommended for SyncTex).
+
+\input{meta.tex}
+
+% packages
+\input{_pkg/language}
+\input{_pkg/citation}
+\input{_pkg/font_generic}
+%\input{_pkg/font_pdflatex}
+\input{_pkg/font_xetex}
+\input{_pkg/formatting}
+\input{_pkg/code}
+\input{_pkg/hyperref}
+\input{_pkg/caption}
+\input{_pkg/graphics}
+\input{_pkg/notes}
+\input{_pkg/minitoc}
+\input{_pkg/textbox}
+\input{_pkg/table}
+
+% Clever reference must be the last one
+\usepackage{cleveref}
+\crefname{textbox}{textbox}{textboxes}
+\Crefname{textbox}{Textbox}{Textboxes}
+
+\begin{document} \let\ref\cref
+
+\input{frontpage}
+\input{todo}
+\tableofcontents
+\clearpage
+
+%\linespread{1.3}
+\onehalfspace
+
+\input{_example/example}
+
+\input{_pkg/formatting_closure}
+\input{_bib/bibliography}
+
+\appendix
+\input{attachments/att_example}
+
+\end{document}

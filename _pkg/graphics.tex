@@ -1,0 +1,24 @@
+%% when picture files are in a subdirectory,
+%% then specify their path using:
+%% \graphicspath{{_example/}}
+
+%% let op graphicS is verouderd
+%% dit pas laden na de pst tricks
+%% package opties o.a. pdftex, xetex (probeer eerst autodetect, dus geen optie)
+\usepackage{graphicx}
+
+%% prevent floats from crossing a section
+%% (from Chapter 5 of LaTeX Beginner's Guide by Stefan Kottwitz)
+\usepackage[section]{placeins}
+
+%% precise image positioning with the float package
+%% \begin{figure}[H]
+%% the H specifier places the float at precisely the location in the LaTeX code
+\usepackage{float}
+\restylefloat{figure}
+\restylefloat{table}
+
+%% afbeeldingen floating maken (wrapfig) en naast elkaar zetten (subfig)
+\usepackage{wrapfig}
+%\usepackage{placeins} % activated  before (see above)
+\usepackage{subfig}

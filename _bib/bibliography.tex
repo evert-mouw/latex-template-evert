@@ -1,0 +1,33 @@
+%% backreferences: see _pkg/hyperref.tex
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{References}
+%\bibliographystyle{plain}
+%\bibliographystyle{alpha}
+\bibliographystyle{_pkg/apsr-url} % use apsr-url for political science (_pkg/apsr-url.bst needed)
+%\nocite{*} % shows all entries in bronnen, even if not cited
+\bibliography{_bib/example}
+%\bibliography{_bib/sources1,_bib/sources2,_bib/sources3}
+\todo{Copy the example.bib file to real source bib files.}
+
+%% multibbl:
+%\renewcommand{\bibname}{\vskip -20 pt}
+%\renewcommand{\refname}{\vskip -20 pt}
+%\section{References}
+%\bibliography{sources1}{_bib/sources1}{\begin{small}Sources 1\end{small}}
+%\bibliography{sources2}{_bib/sources2}{\begin{small}Sources 2\end{small}}
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{List of tables}
+\listoftables
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{List of figures}
+\listoffigures
+
+%\phantomsection
+%\addcontentsline{toc}{section}{Endnotes}
+%\theendnotes

@@ -1,0 +1,24 @@
+%% natbib
+%% Disable when using multibb ??
+%% reference sheet: http://merkel.zoneo.net/Latex/natbib.php
+
+%% Harvard style citations.
+%% Usage:
+%% \citet{goossens93}  	Goossens et al. (1993)
+%% \citep{goossens93} 	(Goossens et al., 1993)
+%% \bibliographystyle{plainnat}  or agsm
+%% http://merkel.zoneo.net/Latex/natbib.php
+\usepackage[round,longnamesfirst]{natbib}
+
+%% nice numbered system
+%% broken backref: http://tex.stackexchange.com/questions/13653/hyperref-with-the-backref-page-option
+%\usepackage[super,square,numbers,comma,sort&compress]{natbib}
+
+%% meerdere bibliografieen
+%% http://www.tex.ac.uk/cgi-bin/texfaq2html?label=multbib
+%\usepackage{multibbl}
+%% Put the code below after the \begin{document}
+%\newbibliography{sources1}
+%\bibliographystyle{sources1}{alpha}
+%\newbibliography{sources2}
+%\bibliographystyle{sources2}{plain}

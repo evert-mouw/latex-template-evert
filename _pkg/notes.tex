@@ -1,0 +1,15 @@
+%% improved footnote presentation
+%% alas, the hyperref support will not work any more
+%% see texlive bug #533602 http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=533602
+%% so load this AFTER the hyperref package, so we can disable hyperfootnotes
+\hypersetup{hyperfootnotes=false} % but generates a warning: Option `hyperfootnotes' has already been used, (hyperref) setting the option has no effect
+\usepackage[bottom,multiple,hang]{footmisc}
+
+%% todo items
+%% \todo{Something to do yet \ldots} % sidenote (margin note)
+%% \todo[inline]{Some paragraph or figure caption yet to write \ldots}
+%% \missingfigure{Draw some figure here.}
+%% \listoftodos % create a list of to-do's
+%% options:
+%% dutch - use dutch text strings (english is default; for other languages, see the docs)
+\usepackage{todonotes}

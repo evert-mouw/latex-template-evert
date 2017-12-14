@@ -1,0 +1,34 @@
+%% Table stuff
+
+%% rotate table headers by using one of these methods:
+%% - \begin{sidewaystable} (needs the rotate package)
+%% - rotatebox{degrees}{text} (needs the graphicx package)
+
+%% for auto-width text-wrapped colums in tables, the X is auto-width
+%% example: \begin{tabularx}{\textwidth}{ X l l l l l l l }
+\usepackage{tabularx}
+
+%% Rotating
+%%
+%% Pascal de Bruijn - The p-Code Machine - LaTeX tips & tricks
+%% Source: http://blog.pcode.nl/2007/07/19/latex-tips-tricks/
+%%
+%%  Every once in a while your tables get to wide to fit on a portrait A4 page.
+%% Don’t panic, the rotating package will come to the rescue.
+%% Using the sideways environment (defined by the rotating package) you can rotate
+%% an object (a table for example) 270/90 degrees.
+%% Please note that only the object is rotated. This means page headers and footers
+%% remain as they were, not disrupting the document flow.
+%%
+%% sidewaystable --> for table
+%% sidewaysfigure --> for figure
+%% sideways --> for everything
+
+%\usepackage{rotating}
+%%
+%% Example of use:
+%%
+%\begin{sideways}
+% % thing to rotate comes here
+%\end{sideways}
+

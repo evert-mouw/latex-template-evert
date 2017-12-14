@@ -1,0 +1,40 @@
+\phantomsection
+\addcontentsline{toc}{section}{Front page}
+
+\pagenumbering{arabic}
+\thispagestyle{empty} % op de eerste pagina geen paginanummer
+
+\addvspace{40mm}
+
+\begin{center}
+%% alternate colors: http://en.wikibooks.org/wiki/LaTeX/Colors
+\textcolor{OrangeRed}{printed on \today}\\
+\bigskip
+\huge{\metatitle}
+\end{center}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.0]{_example/AFBEELDING.png}
+	\caption{BESCHRIJVING VAN AFBEELDING}
+	\label{fig:AFBEELDING}
+	\todo[inline]{Hier nog een afbeelding toevoegen etc.}
+\end{figure}
+
+\addvspace{40mm}
+
+\begin{abstract}
+\noindent{\metaabstract}
+\end{abstract}
+
+\addvspace{40mm}
+
+\begin{tabular}{l l}
+\textit{Author}			&	\metaauthor \space <\metacontact> \\
+\textit{Date}			&	\metadate \\
+\textit{Institution}	&	\metaorganisation \\
+\textit{Subject}		&	\metasubject \\
+\textit{Keywords}		&	\metakeywords \\
+\end{tabular}
+
+\clearpage

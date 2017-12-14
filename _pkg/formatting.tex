@@ -1,0 +1,109 @@
+%% use geometry OR fullpage to decrease the page margins
+%\usepackage[top=2cm,bottom=2cm,left=3cm,right=2cm]{geometry}
+%% sets all 4 margins to be either 1 inch or 1.5 cm, and specifies the page style.
+\usepackage{fullpage}
+
+% Make a quote environment which is italicized.
+% http://tex.stackexchange.com/questions/14683/defining-environments-based-on-other-ones-whats-the-right-way
+\newenvironment{italicquote}{%
+  \quote
+  \itshape
+}{%
+  \endquote
+}
+
+%% **** MEMOIR ****
+%% for best formatting / layout control, swith to memoir
+%% in the index.tex, change the first line to the memoir class
+%% disable the fullpage above and some of the things below
+%% you can use a build-in memoir theme like pedersen:
+%\chapterstyle{pedersen}
+
+%% fancy headers
+%% http://texblog.wordpress.com/2007/11/07/headerfooter-in-latex-with-fancyhdr/
+%% Better choice would be to switch to memoir
+%%  which has a much better pagestyle support than fancyhdr and book.
+%% DON'T USE FANCYHDR WITH FULLPAGE, USE GEOMETRY PACKAGE INSTEAD
+%% (which adds complexity)
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+
+%% line spacing if \linespread does not suffice
+%% this adds three new environments: doublespace, onehalfspace, singlespace
+\usepackage{setspace}
+
+%% suppresses widows and orphans
+\widowpenalty=10000 %% prevent single line of a paragraph (called "widow") remaining on the top of the succeeding page
+\clubpenalty=10000 %% prevent single line of a paragraph remaining on the bottom of the preceding page
+
+%% vertical alignment and paragraph spacing - use either raggedbottom or flushbottom
+\raggedbottom %% FIXED vertical whitespace between paragraphs, but total heigt NOT the same on all pages
+%\flushbottom %% VARIABLE vertical whitespace between paragraphs, but total heigt the same on all pages
+
+%% \frenchspacing - no extra space after a period
+%% Tells LATEX not to insert more space after a period than after ordinary character.
+%% This is very common in non-English languages, except bibliographies.
+%% If you use \frenchspacing, the command \@ is not necessary.
+%\frenchspacing
+
+%% endnote support, for example \endnote{text here}
+%% where you want the endnotes to appear, type: \theendnotes
+%% This will create .ent files, sometimes errors will happen (.ent file not found)
+%\usepackage{endnotes}
+
+%% Control line space and formatting of lists (enumerate, itemize, description)
+%% labelindent=\parindent, leftmargin=*, itemsep=0pt, parsep=0pt
+%% The "shortlabels" option emulates enumerate-like syntax, where A, a, I, i
+%% and 1 stand for \Alph*, \alph*, \Roman*, \roman* and \arabic*. This is intended mainly as
+%% a sort of compatibility mode with the enumerate package, and therefore the following special
+%% rule applies: if the very frst option (at any level) is not recognized as a valid key, then it will
+%% be considered a label with the enumerate-like syntax.
+\usepackage[shortlabels]{enumitem}
+\setlist{noitemsep}
+
+%% Discourage hyphenation
+%% http://dcwww.camd.dtu.dk/~schiotz/comp/LatexTips/LatexTips.html#nohyphen
+%% penalties to things that don't look nice (such as words split over two lines)
+%% The default penalty for splitting a word is rather low.
+%% Increasing penalty will produce lines with a little more extra spacing between words,
+%% and you should therefore increase TeX's tolerance for such lines.
+%% adjusting \tolerance appears to be most promising
+%% A \hyphenpenalty of 10000 (almost) prevents hyphenation, but produces overlong and/or ugly lines.
+%\hyphenpenalty=5000
+%\tolerance=1000
+
+%% insert a pagebreak before a section
+%% Gabriel Many, 2008-08
+%% Evert Mouw, 2009-01
+\makeatletter
+\renewcommand{\section}{\@startsection
+{section}
+{1}
+{0mm}
+{-3.5ex \@plus -1ex \@minus -.2ex}
+{2.3ex \@plus.2ex}
+{\clearpage\phantomsection\normalfont\Large\bfseries}}
+\makeatother{}
+
+%% These two commands increase the space between two paragraphs
+%% while setting the paragraph indent to zero.
+%% but...
+%% "parskip should not be used as it will also modify settings for 
+%% list environments, table of contents, etc., and headings."
+%% (An essential guide to LATEX2e usage - Obsolete commands and packages)
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+%% Elegant section numbering
+%%
+%% Pascal de Bruijn - The p-Code Machine - LaTeX tips & tricks
+%% Source: http://blog.pcode.nl/2007/07/19/latex-tips-tricks/
+%%
+%% Modified by Evert Mouw to
+%% - prefix the section symbol \S
+%% - make it Gray; needs \usepackage[usenames,dvipsnames]{color}
+%%
+%% For my thesis I wanted the section numbering to be visible in the margins. This way the section titles
+%% would be %% nicely lined up with my text, producing a very elegant look. Here is how you can do it:
+\usepackage{sectsty}
+\makeatletter\def\@seccntformat#1{\protect\makebox[0pt][r]{\textcolor{Gray}{\S \csname the#1\endcsname}\hspace{12pt}}}\makeatother

@@ -1,0 +1,32 @@
+%% generic XeTeX packages
+\usepackage{fontspec}
+\usepackage{realscripts}
+%\usepackage{xltxtra} % only for backward compatibility
+
+% For archaic input (e.g. convert -- to en-dash)
+\defaultfontfeatures{Mapping=tex-text}
+
+%% Libertine and Inconsolata
+\setmainfont{Linux Libertine O}
+\setromanfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+\setmonofont{Inconsolata}
+
+%% Liberation
+%% https://en.wikipedia.org/wiki/Liberation_fonts
+%\setmainfont{Liberation Serif}
+%\setromanfont{Liberation Serif}
+%\setsansfont{Liberation Sans}
+%\setmonofont{Liberation Mono}
+
+%% Math / Equations
+%% http://tex.stackexchange.com/questions/118244/what-is-the-difference-between-unicode-math-and-mathspec
+\usepackage{unicode-math} % can use both unicode chars AND descriptions for equations :-)
+%%
+%% choose a math font for equations
+%%
+%\usepackage{mathspec} % must use descriptions for equations
+\setmathfont{TeX Gyre Pagella Math}
+%\setmathfont{texgyrepagella-math.otf}
+%\setmathfont{Latin Modern}
+%\setmathfont{Asana Math}

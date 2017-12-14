@@ -1,0 +1,21 @@
+\usepackage{boxedminipage}
+
+\newcounter{textbox}
+\newenvironment{textbox}[1]%
+{
+	\refstepcounter{textbox}%
+	\par%
+	\medskip%
+	\noindent%
+	\textbf{Textbox~\thetextbox: #1}%
+	\\%
+	\medskip%
+	%\begin{center}%
+	\begin{boxedminipage}{\textwidth}%
+	\rmfamily{}%
+}
+{
+	%\end{center}%
+	\end{boxedminipage}%
+	\medskip{}%
+}
